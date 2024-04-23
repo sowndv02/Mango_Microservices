@@ -1,0 +1,7 @@
+D:\Learning\Udemy\ASPNETCORE Microservices\Mango_Microservices\Mango\Mango.Web\obj\Debug\net6.0\Mango.Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\Learning\Udemy\ASPNETCORE Microservices\Mango_Microservices\Mango\Mango.Web\obj\Debug\net6.0\Mango.Web.AssemblyInfoInputs.cache
+D:\Learning\Udemy\ASPNETCORE Microservices\Mango_Microservices\Mango\Mango.Web\obj\Debug\net6.0\Mango.Web.AssemblyInfo.cs
+D:\Learning\Udemy\ASPNETCORE Microservices\Mango_Microservices\Mango\Mango.Web\obj\Debug\net6.0\Mango.Web.csproj.CoreCompileInputs.cache
+D:\Learning\Udemy\ASPNETCORE Microservices\Mango_Microservices\Mango\Mango.Web\obj\Debug\net6.0\Mango.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\Learning\Udemy\ASPNETCORE Microservices\Mango_Microservices\Mango\Mango.Web\obj\Debug\net6.0\Mango.Web.RazorAssemblyInfo.cache
+D:\Learning\Udemy\ASPNETCORE Microservices\Mango_Microservices\Mango\Mango.Web\obj\Debug\net6.0\Mango.Web.RazorAssemblyInfo.cs

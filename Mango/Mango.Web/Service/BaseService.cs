@@ -69,9 +69,10 @@ namespace Mango.Web.Service
                         var apiResponseDto = JsonConvert.DeserializeObject<ResponseDto>(apiContent);
                         return apiResponseDto;
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
-                var dto = new ResponseDto 
+                var dto = new ResponseDto
                 {
                     Message = ex.Message.ToString(),
                     IsSuccess = false
