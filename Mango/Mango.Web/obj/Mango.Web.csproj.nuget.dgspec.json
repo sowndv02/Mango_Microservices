@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Udemy\\ASPNETCORE Microservice\\Mango\\Mango.Web\\Mango.Web.csproj": {}
+    "D:\\Learning\\Udemy\\ASPNETCORE Microservices\\Mango_Microservices\\Mango\\Mango.Web\\Mango.Web.csproj": {}
   },
   "projects": {
-    "H:\\Udemy\\ASPNETCORE Microservice\\Mango\\Mango.Web\\Mango.Web.csproj": {
+    "D:\\Learning\\Udemy\\ASPNETCORE Microservices\\Mango_Microservices\\Mango\\Mango.Web\\Mango.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Udemy\\ASPNETCORE Microservice\\Mango\\Mango.Web\\Mango.Web.csproj",
+        "projectUniqueName": "D:\\Learning\\Udemy\\ASPNETCORE Microservices\\Mango_Microservices\\Mango\\Mango.Web\\Mango.Web.csproj",
         "projectName": "Mango.Web",
-        "projectPath": "H:\\Udemy\\ASPNETCORE Microservice\\Mango\\Mango.Web\\Mango.Web.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "H:\\Udemy\\ASPNETCORE Microservice\\Mango\\Mango.Web\\obj\\",
+        "projectPath": "D:\\Learning\\Udemy\\ASPNETCORE Microservices\\Mango_Microservices\\Mango\\Mango.Web\\Mango.Web.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "D:\\Learning\\Udemy\\ASPNETCORE Microservices\\Mango_Microservices\\Mango\\Mango.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "H:\\Data\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
