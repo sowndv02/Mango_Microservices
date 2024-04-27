@@ -4,6 +4,76 @@
     "H:\\Udemy\\ASPNETCORE Microservice\\Mango\\Mango.Services.AuthAPI\\Mango.Services.AuthAPI.csproj": {}
   },
   "projects": {
+    "H:\\Udemy\\ASPNETCORE Microservice\\Mango\\Mango.MessageBus\\Mango.MessageBus.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\Udemy\\ASPNETCORE Microservice\\Mango\\Mango.MessageBus\\Mango.MessageBus.csproj",
+        "projectName": "Mango.MessageBus",
+        "projectPath": "H:\\Udemy\\ASPNETCORE Microservice\\Mango\\Mango.MessageBus\\Mango.MessageBus.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "H:\\Udemy\\ASPNETCORE Microservice\\Mango\\Mango.MessageBus\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "H:\\Data\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Azure.Messaging.ServiceBus": {
+              "target": "Package",
+              "version": "[7.17.5, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "H:\\Udemy\\ASPNETCORE Microservice\\Mango\\Mango.Services.AuthAPI\\Mango.Services.AuthAPI.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -32,7 +102,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "H:\\Udemy\\ASPNETCORE Microservice\\Mango\\Mango.MessageBus\\Mango.MessageBus.csproj": {
+                "projectPath": "H:\\Udemy\\ASPNETCORE Microservice\\Mango\\Mango.MessageBus\\Mango.MessageBus.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
