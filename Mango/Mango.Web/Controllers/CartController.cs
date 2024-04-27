@@ -46,6 +46,21 @@ namespace Mango.Web.Controllers
         }
 
         [HttpPost]
+        public async Task<IActionResult> EmailCart(CartDto cartDto)
+        {
+            CartDto cart = await LoadCartDtoBaseOnLoggedInUser();
+            cart.CartHeader.Email = User.Claims.Where(x => x.Type == JwtRegisteredClaimNames.Email)?.FirstOrDefault()?.Value;
+            ResponseDto? response = await _cartService.EmailCart(cart);
+            if (response != null && response.IsSuccess)
+            {
+                TempData["success"] = "EMail will be processed and sent shortly.";
+                return RedirectToAction(nameof(CartIndex));
+            }
+            return View();
+        }
+
+
+        [HttpPost]
         public async Task<IActionResult> RemoveCoupon(CartDto cartDto)
         {
             cartDto.CartHeader.CouponCode = string.Empty;
