@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mango.MessageBus", "Mango.M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mango.Services.EmailAPI", "Mango.Services.EmailAPI\Mango.Services.EmailAPI.csproj", "{A9A7C450-BBE7-402B-B6E9-D64C4E576910}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mango.Servoces.OrderAPI", "Mango.Servoces.OrderAPI\Mango.Servoces.OrderAPI.csproj", "{DC2A6EBE-71A7-489A-BAD6-0CF207EBEE44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mango.Services.OrderAPI", "Mango.Servoces.OrderAPI\Mango.Services.OrderAPI.csproj", "{DC2A6EBE-71A7-489A-BAD6-0CF207EBEE44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

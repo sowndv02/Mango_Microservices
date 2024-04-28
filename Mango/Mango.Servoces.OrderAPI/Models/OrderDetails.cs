@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Mango.Servoces.OrderAPI.Models
+namespace Mango.Services.OrderAPI.Models
 {
     public class OrderDetails
     {

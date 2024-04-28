@@ -1,6 +1,6 @@
 ﻿using Mango.Services.OrderAPI.Models.Dto;
 
-namespace Mango.Servoces.OrderAPI.Models.Dto
+namespace Mango.Services.OrderAPI.Models.Dto
 {
     public class OrderDetailsDto
     {

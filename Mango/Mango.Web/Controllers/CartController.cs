@@ -7,20 +7,22 @@ using System.IdentityModel.Tokens.Jwt;
 
 namespace Mango.Web.Controllers
 {
-	public class CartController : Controller
-	{
-		private readonly ICartService _cartService;
-        public CartController(ICartService cartService)
+    public class CartController : Controller
+    {
+        private readonly ICartService _cartService;
+        private readonly IOrderService _orderService;
+        public CartController(ICartService cartService, IOrderService orderService)
         {
             _cartService = cartService;
+            _orderService = orderService;
         }
 
-		[Authorize]
+        [Authorize]
         public async Task<IActionResult> CartIndex()
-		{
+        {
 
-			return View(await LoadCartDtoBaseOnLoggedInUser());
-		}
+            return View(await LoadCartDtoBaseOnLoggedInUser());
+        }
 
         [Authorize]
         public async Task<IActionResult> Checkout()
@@ -29,13 +31,35 @@ namespace Mango.Web.Controllers
             return View(await LoadCartDtoBaseOnLoggedInUser());
         }
 
+        [HttpPost]
+        [ActionName("Checkout")]
+        public async Task<IActionResult> Checkout(CartDto cartDto)
+        {
+
+            CartDto cart = await LoadCartDtoBaseOnLoggedInUser();
+            cart.CartHeader.Phone = cartDto.CartHeader.Phone;
+            cart.CartHeader.Email = cartDto.CartHeader.Email;
+            cart.CartHeader.Name = cartDto.CartHeader.Name;
+            var response = await _orderService.CreateOrder(cart);
+            OrderHeaderDto orderHeaderDto = JsonConvert.DeserializeObject<OrderHeaderDto>(Convert.ToString(response.Result));
+            if (response != null && response.IsSuccess)
+            {
+                // get stripe session and redirect to stripe to place order
+
+            }
+            return View(orderHeaderDto);
+
+
+        }
+
+
         public async Task<IActionResult> Remove(int cartDetailsId)
-		{
+        {
             var userId = User.Claims.Where(x => x.Type == JwtRegisteredClaimNames.Sub)?.FirstOrDefault()?.Value;
             ResponseDto? response = await _cartService.RemoveFromCartAsync(cartDetailsId);
             if (response != null && response.IsSuccess)
             {
-				TempData["success"] = "Cart updated successfully";
+                TempData["success"] = "Cart updated successfully";
                 return RedirectToAction(nameof(CartIndex));
             }
             return View();
@@ -82,15 +106,15 @@ namespace Mango.Web.Controllers
         }
 
         public async Task<CartDto> LoadCartDtoBaseOnLoggedInUser()
-		{
-			var userId = User.Claims.Where(x => x.Type == JwtRegisteredClaimNames.Sub)?.FirstOrDefault()?.Value;
-			ResponseDto? response = await _cartService.GetCartByUserIdAsync(userId);
-			if(response != null && response.IsSuccess)
-			{
-				CartDto cartDto = JsonConvert.DeserializeObject<CartDto>(Convert.ToString(response.Result));
-				return cartDto;
-			}
-			return new CartDto();
-		}
-	}
+        {
+            var userId = User.Claims.Where(x => x.Type == JwtRegisteredClaimNames.Sub)?.FirstOrDefault()?.Value;
+            ResponseDto? response = await _cartService.GetCartByUserIdAsync(userId);
+            if (response != null && response.IsSuccess)
+            {
+                CartDto cartDto = JsonConvert.DeserializeObject<CartDto>(Convert.ToString(response.Result));
+                return cartDto;
+            }
+            return new CartDto();
+        }
+    }
 }
