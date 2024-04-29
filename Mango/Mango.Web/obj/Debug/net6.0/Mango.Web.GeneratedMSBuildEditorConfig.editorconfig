@@ -32,6 +32,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDaGVja291dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Learning/Udemy/ASPNETCORE Microservices/Mango_Microservices/Mango/Mango.Web/Views/Cart/Confirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDb25maXJtYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Learning/Udemy/ASPNETCORE Microservices/Mango_Microservices/Mango/Mango.Web/Views/Coupon/CouponCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cG9uXENvdXBvbkNyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
