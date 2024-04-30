@@ -1,4 +1,5 @@
 ﻿using Mango.Services.EmailAPI.Data;
+using Mango.Services.EmailAPI.Message;
 using Mango.Services.EmailAPI.Models;
 using Mango.Services.EmailAPI.Models.Dto;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +21,7 @@ namespace Mango.Services.EmailAPI.Services
             message.AppendLine("<br/>Total " + cartDto.CartHeader.CartTotal);
             message.Append("<br/>");
             message.Append("<ul>");
-            foreach(var item in cartDto.CartDetails)
+            foreach (var item in cartDto.CartDetails)
             {
                 message.Append("<li>");
                 message.Append(item.Product.Name + "x" + item.Count);
@@ -28,6 +29,12 @@ namespace Mango.Services.EmailAPI.Services
             }
             message.Append("<ul/>");
             await LogAndEmail(message.ToString(), cartDto.CartHeader.Email);
+        }
+
+        public async Task LogOrderPlaced(RewardsMessage rewardsDto)
+        {
+            string message = "New Order Placed. <br/> Order ID:" + rewardsDto.OrderId;
+            await LogAndEmail(message, "daoson03112002@gmail.com");
         }
 
         public async Task RegisterUserEmailAndLog(string email)
@@ -40,18 +47,18 @@ namespace Mango.Services.EmailAPI.Services
         {
             try
             {
-                EmailLogger emailLogger = new() 
-                { 
+                EmailLogger emailLogger = new()
+                {
                     Email = email,
                     EmailSent = DateTime.Now,
-                    Message = message   
+                    Message = message
                 };
                 await using var _db = new AppDbContext(_dbOptions);
                 await _db.EmailLoggers.AddAsync(emailLogger);
-                await _db.SaveChangesAsync();   
+                await _db.SaveChangesAsync();
                 return true;
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 return false;
             }
