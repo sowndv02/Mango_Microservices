@@ -37,7 +37,7 @@ namespace Mango.Services.OrderAPI.Controllers
 
         [Authorize]
         [HttpGet("GetOrders")]
-        public ResponseDto? Get(string? userId = "")
+        public ResponseDto? GetOrders(string? userId = "")
         {
             try
             {
@@ -57,11 +57,12 @@ namespace Mango.Services.OrderAPI.Controllers
                 _response.IsSuccess = false;
                 _response.Message = ex.Message;
             }
+            return _response;
         }
 
         [Authorize]
         [HttpGet("GetOrder/{id:int}")]
-        public ResponseDto? Get(int id)
+        public ResponseDto? GetOrder(int id)
         {
             try
             {
@@ -73,6 +74,7 @@ namespace Mango.Services.OrderAPI.Controllers
                 _response.IsSuccess = false;
                 _response.Message = ex.Message;
             }
+            return _response;
         }
 
 
@@ -186,7 +188,7 @@ namespace Mango.Services.OrderAPI.Controllers
 
                     RewardsDto rewardsDto = new()
                     {
-                        OrderId = orderHeader.OrderId,
+                        OrderId = orderHeader.OrderHeaderId,
                         RewardsActivity = Convert.ToInt32(orderHeader.OrderTotal),
                         UserId = orderHeader.UserId
                     };
@@ -209,7 +211,7 @@ namespace Mango.Services.OrderAPI.Controllers
 
         [Authorize]
         [HttpPost("UpdateOrderStatus/{orderId:int}")]
-        public async Task<ResponseDto> UpdateOrderStatus(itn int orderId, [FromBody] string newStatus)
+        public async Task<ResponseDto> UpdateOrderStatus(int orderId, [FromBody] string newStatus)
         {
             try
             {
